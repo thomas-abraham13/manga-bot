@@ -33,9 +33,3 @@ async function sendManga(chapter) {
     await browser.close();
 
 };
-
-// for(i=167; i<=190; i++) {
-//     sendManga(i);
-// }
-
-// change to for of

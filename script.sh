@@ -3,9 +3,8 @@
 source .env
 
 # Run the script to generate the manga PDF
-# node index.js
-i=1065
-node -e 'require("./index").sendManga("'${i}'")'
+node index.js
+# node -e 'require("./index").sendManga("'${i}'")'
 
 # Check what OS you're on
 os=$(uname -s)
@@ -14,11 +13,11 @@ os=$(uname -s)
 if [ "$os" == "MINGW64_NT-10.0-22631" ]; then
     echo "Operating System: $os (Windows)"
     # Directory containing PDF files
-    PDF_DIR="C:\Users\thoma\Desktop\Projects\manga-bot\one-piece/"
+    PDF_DIR="C:\Users\thoma\Desktop\Projects\manga-bot\solo-levelling/"
 # Check if the operating system is macOS
 elif [ "$os" == "Darwin" ]; then
     echo "Operating System: $os (macOS)"
-    PDF_DIR="/Users/thomasabraham/Projects/manga-bot/one-piece/"
+    PDF_DIR="/Users/thomasabraham/Projects/manga-bot/solo-levelling/"
 else
     echo "OS Not Recognised"
     PDF_DIR=""
@@ -37,8 +36,8 @@ for file in "$PDF_DIR"*.pdf; do
     # Upload the PDF file to Slack
     curl -F file=@"$file" -F channels="$CHANNEL_ID" -F token="$SLACK_TOKEN" https://slack.com/api/files.upload
     # Delete the file after its been sent and clear the console
-    # rm $file
-    # clear
+    rm $file
+    clear
     echo "Script Completed ✔️"
   else
     echo "Error: File $file not found."
