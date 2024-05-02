@@ -13,8 +13,8 @@ async function sendManga(chapter) {
         await dialog.accept()
     });
 
-    var chptLink = "https://comick.io/comic/00-one-piece/WrjZQ-chapter-" + chapter + "-en";
-    var saveName = "one-piece-" + chapter + ".pdf";
+    var chptLink = "https://mangasololeveling.com/manga/solo-leveling-chapter-" + chapter;
+    var saveName = "solo-levelling-" + chapter + ".pdf";
 
     // Navigate the page to a URL
     await page.goto(chptLink, { waitUntil: 'networkidle0', timeout: 120000 });
@@ -23,11 +23,11 @@ async function sendManga(chapter) {
     // Set screen size
     await page.setViewport({width: 1080, height: 1024});
 
-    // Accept Age Verification
-    // await page.click('#headlessui-description-\:r9\: > div > div.w-full.flex.justify-center > div > button');
+    // Accept Cookies
+    await page.click('body > div.cky-consent-container.cky-box-bottom-left > div > div > div > div.cky-notice-btn-wrapper > button.cky-btn.cky-btn-accept');
     
     // Save the page as a PDF
-    await page.pdf({ path: "one-piece/"+saveName, format: 'A4', timeout: 0 });
+    await page.pdf({ path: "solo-levelling/"+saveName, format: 'A4', timeout: 0 });
     console.log("Chapter " + chapter + " saved as PDF : SUCCESS");
 
     await browser.close();
