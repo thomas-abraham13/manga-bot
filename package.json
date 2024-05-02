@@ -1,0 +1,22 @@
+{
+  "name": "manga-bot",
+  "version": "1.0.0",
+  "description": "sends me manga as a pdf to my slack",
+  "main": "script.sh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomas-abraham13/manga-bot.git"
+  },
+  "author": "Thomas Abraham",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thomas-abraham13/manga-bot/issues"
+  },
+  "homepage": "https://github.com/thomas-abraham13/manga-bot#readme",
+  "dependencies": {
+    "puppeteer": "^22.7.0"
+  }
+}
